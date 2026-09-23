@@ -12,7 +12,6 @@
       --header: #1f2937;
       --card: #1f2937;
       --text: #ffffff;
-      --button-text: #000000;
     }
 
     body {
@@ -21,13 +20,13 @@
       background: var(--background);
       color: var(--text);
       text-align: center;
-      transition: background 0.3s, color 0.3s;
+      transition: 0.3s;
     }
 
     header {
       padding: 30px;
       background: var(--header);
-      transition: background 0.3s;
+      transition: 0.3s;
     }
 
     h1 {
@@ -40,7 +39,9 @@
       max-width: 1000px;
     }
 
-    button {
+    button,
+    .site-button {
+      display: inline-block;
       padding: 15px 25px;
       margin: 8px;
       border: none;
@@ -50,15 +51,17 @@
       transition: 0.2s;
       background: white;
       color: #111827;
+      text-decoration: none;
     }
 
-    button:hover {
+    button:hover,
+    .site-button:hover {
       transform: scale(1.05);
     }
 
     .page {
       display: none;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 30px auto;
       padding: 0 15px;
     }
@@ -69,12 +72,18 @@
 
     .card {
       display: inline-block;
+      vertical-align: top;
       background: var(--card);
       padding: 25px;
       margin: 10px;
       border-radius: 15px;
-      min-width: 180px;
-      transition: background 0.3s;
+      min-width: 220px;
+      max-width: 300px;
+      transition: 0.3s;
+    }
+
+    .card h3 {
+      margin-top: 0;
     }
 
     .back {
@@ -93,11 +102,20 @@
     }
 
     .theme-section {
-      margin: 25px 0;
+      margin: 30px 0;
     }
 
     .theme-section h3 {
       margin-bottom: 15px;
+    }
+
+    .site-button {
+      min-width: 190px;
+    }
+
+    .description {
+      opacity: 0.9;
+      line-height: 1.5;
     }
   </style>
 </head>
@@ -135,18 +153,99 @@
   <h2>🎮 Games</h2>
 
   <div class="card">
-    <h3>Game 1</h3>
-    <button onclick="alert('Add your game link here!')">
-      ▶ Play
-    </button>
+
+    <h3>🕹️ CrazyGames</h3>
+
+    <p class="description">
+      Thousands of browser games you can play online.
+    </p>
+
+    <a
+      class="site-button"
+      href="https://www.crazygames.com/"
+      target="_blank"
+      rel="noopener noreferrer">
+      🎮 Open CrazyGames
+    </a>
+
   </div>
 
+
   <div class="card">
-    <h3>Game 2</h3>
-    <button onclick="alert('Add your game link here!')">
+
+    <h3>🧱 Bloxd.io</h3>
+
+    <p class="description">
+      Find this game on CrazyGames.
+    </p>
+
+    <a
+      class="site-button"
+      href="https://www.crazygames.com/"
+      target="_blank"
+      rel="noopener noreferrer">
       ▶ Play
-    </button>
+    </a>
+
   </div>
+
+
+  <div class="card">
+
+    <h3>🏎️ PolyTrack</h3>
+
+    <p class="description">
+      A fast browser racing game.
+    </p>
+
+    <a
+      class="site-button"
+      href="https://www.crazygames.com/"
+      target="_blank"
+      rel="noopener noreferrer">
+      ▶ Play
+    </a>
+
+  </div>
+
+
+  <div class="card">
+
+    <h3>🌌 Space Waves</h3>
+
+    <p class="description">
+      Dodge obstacles and survive the waves.
+    </p>
+
+    <a
+      class="site-button"
+      href="https://www.crazygames.com/"
+      target="_blank"
+      rel="noopener noreferrer">
+      ▶ Play
+    </a>
+
+  </div>
+
+
+  <div class="card">
+
+    <h3>🧩 Word Wipe</h3>
+
+    <p class="description">
+      Find words and clear the board.
+    </p>
+
+    <a
+      class="site-button"
+      href="https://www.crazygames.com/"
+      target="_blank"
+      rel="noopener noreferrer">
+      ▶ Play
+    </a>
+
+  </div>
+
 
   <br>
 
@@ -160,9 +259,66 @@
 <!-- MEDIA -->
 <div id="media" class="page">
 
-  <h2>🎬 Media</h2>
+  <h2>🎬 Movies & Media</h2>
 
-  <p>Add your media links here.</p>
+  <div class="card">
+
+    <h3>🍿 Tubi</h3>
+
+    <p class="description">
+      Free movies and TV shows.
+    </p>
+
+    <a
+      class="site-button"
+      href="https://tubitv.com/"
+      target="_blank"
+      rel="noopener noreferrer">
+      🍿 Open Tubi
+    </a>
+
+  </div>
+
+
+  <div class="card">
+
+    <h3>🎬 Pluto TV</h3>
+
+    <p class="description">
+      Free movies, shows, and live TV.
+    </p>
+
+    <a
+      class="site-button"
+      href="https://pluto.tv/us/movies/"
+      target="_blank"
+      rel="noopener noreferrer">
+      🎬 Open Pluto TV
+    </a>
+
+  </div>
+
+
+  <div class="card">
+
+    <h3>▶️ YouTube</h3>
+
+    <p class="description">
+      Videos, shows, trailers, and more.
+    </p>
+
+    <a
+      class="site-button"
+      href="https://www.youtube.com/"
+      target="_blank"
+      rel="noopener noreferrer">
+      ▶️ Open YouTube
+    </a>
+
+  </div>
+
+
+  <br>
 
   <button class="back" onclick="showPage('home')">
     ← Back
@@ -174,257 +330,14 @@
 <!-- SETTINGS -->
 <div id="settings" class="page">
 
-  <h2>⚙️ Theme Center</h2>
+  <h2>⚙️ Themes</h2>
 
   <div id="dailyStatus">
     📅 Daily theme
   </div>
 
+  <div id="themeContainer"></div>
 
-  <!-- ORIGINAL THEMES -->
-  <div class="theme-section">
-
-    <h3>🎨 Original Themes</h3>
-
-    <button class="theme-button"
-      onclick="setTheme('#000000','#080808','#ffffff','🌑 Black Hole')">
-      🌑 Black Hole
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#102a43','#174a7e','#ffffff','🌊 Ocean')">
-      🌊 Ocean
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#092e1b','#14532d','#ffffff','🟢 Matrix')">
-      🟢 Matrix
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#24103d','#4c1d95','#ffffff','🟣 Purple Void')">
-      🟣 Purple Void
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#3b0a0a','#7f1d1d','#ffffff','🔥 Lava')">
-      🔥 Lava
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#10152e','#312e81','#ffffff','🌌 Galaxy')">
-      🌌 Galaxy
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#351047','#86198f','#ffffff','🌈 Rainbow')">
-      🌈 Rainbow
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#dbeafe','#60a5fa','#111827','❄️ Ice')">
-      ❄️ Ice
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#4a1608','#c2410c','#ffffff','🌅 Sunset')">
-      🌅 Sunset
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#052e16','#166534','#ffffff','🌲 Forest')">
-      🌲 Forest
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#172554','#2563eb','#ffffff','⚡ Electric')">
-      ⚡ Electric
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#09090b','#27272a','#ffffff','🌙 Midnight')">
-      🌙 Midnight
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#f3f4f6','#d1d5db','#111827','☀️ Daylight')">
-      ☀️ Daylight
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#4a044e','#db2777','#ffffff','🍭 Candy')">
-      🍭 Candy
-    </button>
-
-  </div>
-
-
-  <!-- WARM -->
-  <div class="theme-section">
-
-    <h3>🔥 Warm & Energetic</h3>
-
-    <button class="theme-button"
-      onclick="setTheme('#DC143C','#a30f2d','#ffffff','Crimson Red')">
-      ❤️ Crimson Red
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#FF7F50','#e85d32','#111827','Coral Pink')">
-      🪸 Coral Pink
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#FF6F00','#c65300','#111827','Electric Orange')">
-      🟠 Electric Orange
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#FFD700','#d4af00','#111827','Sunset Gold')">
-      🟡 Sunset Gold
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#E5A93C','#b8862f','#111827','Mustard Yellow')">
-      🟨 Mustard Yellow
-    </button>
-
-  </div>
-
-
-  <!-- COOL -->
-  <div class="theme-section">
-
-    <h3>❄️ Cool & Calm</h3>
-
-    <button class="theme-button"
-      onclick="setTheme('#87CEEB','#4682b4','#111827','Sky Blue')">
-      ☁️ Sky Blue
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#4B0082','#31005c','#ffffff','Electric Indigo')">
-      💜 Electric Indigo
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#008080','#005f5f','#ffffff','Teal Green')">
-      🩵 Teal Green
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#98FF98','#5dcc5d','#111827','Mint Fresh')">
-      🌿 Mint Fresh
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#000080','#000052','#ffffff','Midnight Navy')">
-      🌃 Midnight Navy
-    </button>
-
-  </div>
-
-
-  <!-- EARTHY -->
-  <div class="theme-section">
-
-    <h3>🌿 Earthy & Muted</h3>
-
-    <button class="theme-button"
-      onclick="setTheme('#8A9A86','#647260','#111827','Sage Green')">
-      🌱 Sage Green
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#E2725B','#ad4d3a','#111827','Terracotta')">
-      🧱 Terracotta
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#CC7722','#965518','#ffffff','Warm Ochre')">
-      🟤 Warm Ochre
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#6B8E23','#4f6a19','#ffffff','Olive Drab')">
-      🫒 Olive Drab
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#483C32','#302820','#ffffff','Taupe Brown')">
-      🤎 Taupe Brown
-    </button>
-
-  </div>
-
-
-  <!-- NEON -->
-  <div class="theme-section">
-
-    <h3>⚡ Bright & Neon</h3>
-
-    <button class="theme-button"
-      onclick="setTheme('#9D00FF','#6800a8','#ffffff','Cyber Purple')">
-      💜 Cyber Purple
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#39FF14','#19b800','#111827','Neon Green')">
-      🟢 Neon Green
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#FF1493','#b00065','#ffffff','Hot Pink')">
-      💗 Hot Pink
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#00FFFF','#00a8a8','#111827','Vibrant Cyan')">
-      🩵 Vibrant Cyan
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#FF00FF','#b000b0','#ffffff','Bright Magenta')">
-      💖 Bright Magenta
-    </button>
-
-  </div>
-
-
-  <!-- PASTEL -->
-  <div class="theme-section">
-
-    <h3>🌸 Soft & Pastel</h3>
-
-    <button class="theme-button"
-      onclick="setTheme('#E6E6FA','#b5b5d8','#111827','Lavender Mist')">
-      💜 Lavender Mist
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#FFDAB9','#e8b98f','#111827','Peach Puff')">
-      🍑 Peach Puff
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#FFC0CB','#e58a9b','#111827','Soft Rose')">
-      🌹 Soft Rose
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#89CFF0','#5b9fc2','#111827','Baby Blue')">
-      🩵 Baby Blue
-    </button>
-
-    <button class="theme-button"
-      onclick="setTheme('#D0F0C0','#9bc58c','#111827','Matcha Cream')">
-      🍵 Matcha Cream
-    </button>
-
-  </div>
-
-
-  <!-- CONTROLS -->
   <div class="theme-section">
 
     <h3>🎲 Theme Controls</h3>
@@ -443,7 +356,6 @@
 
   </div>
 
-
   <button class="back" onclick="showPage('home')">
     ← Back
   </button>
@@ -452,12 +364,6 @@
 
 
 <script>
-
-  /*
-    ==========================
-       PAGE NAVIGATION
-    ==========================
-  */
 
   function showPage(page) {
 
@@ -470,13 +376,155 @@
   }
 
 
-  /*
-    ==========================
-          THEME SYSTEM
-    ==========================
-  */
+  const themeGroups = {
 
-  function setTheme(background, header, text, name) {
+    "🎨 Original Themes": [
+
+      ["🌑 Black Hole", "#000000", "#080808", "#ffffff"],
+      ["🌊 Ocean", "#102a43", "#174a7e", "#ffffff"],
+      ["🟢 Matrix", "#092e1b", "#14532d", "#ffffff"],
+      ["🟣 Purple Void", "#24103d", "#4c1d95", "#ffffff"],
+      ["🔥 Lava", "#3b0a0a", "#7f1d1d", "#ffffff"],
+      ["🌌 Galaxy", "#10152e", "#312e81", "#ffffff"],
+      ["🌈 Rainbow", "#351047", "#86198f", "#ffffff"],
+      ["❄️ Ice", "#dbeafe", "#60a5fa", "#111827"],
+      ["🌅 Sunset", "#4a1608", "#c2410c", "#ffffff"],
+      ["🌲 Forest", "#052e16", "#166534", "#ffffff"],
+      ["⚡ Electric", "#172554", "#2563eb", "#ffffff"],
+      ["🌙 Midnight", "#09090b", "#27272a", "#ffffff"],
+      ["☀️ Daylight", "#f3f4f6", "#d1d5db", "#111827"],
+      ["🍭 Candy", "#4a044e", "#db2777", "#ffffff"]
+
+    ],
+
+    "🔥 Warm & Energetic": [
+
+      ["❤️ Crimson Red", "#DC143C", "#a30f2d", "#ffffff"],
+      ["🪸 Coral Pink", "#FF7F50", "#e85d32", "#111827"],
+      ["🟠 Electric Orange", "#FF6F00", "#c65300", "#111827"],
+      ["🟡 Sunset Gold", "#FFD700", "#d4af00", "#111827"],
+      ["🟨 Mustard Yellow", "#E5A93C", "#b8862f", "#111827"]
+
+    ],
+
+    "❄️ Cool & Calm": [
+
+      ["☁️ Sky Blue", "#87CEEB", "#4682b4", "#111827"],
+      ["💜 Electric Indigo", "#4B0082", "#31005c", "#ffffff"],
+      ["🩵 Teal Green", "#008080", "#005f5f", "#ffffff"],
+      ["🌿 Mint Fresh", "#98FF98", "#5dcc5d", "#111827"],
+      ["🌃 Midnight Navy", "#000080", "#000052", "#ffffff"]
+
+    ],
+
+    "🌿 Earthy & Muted": [
+
+      ["🌱 Sage Green", "#8A9A86", "#647260", "#111827"],
+      ["🧱 Terracotta", "#E2725B", "#ad4d3a", "#111827"],
+      ["🟤 Warm Ochre", "#CC7722", "#965518", "#ffffff"],
+      ["🫒 Olive Drab", "#6B8E23", "#4f6a19", "#ffffff"],
+      ["🤎 Taupe Brown", "#483C32", "#302820", "#ffffff"]
+
+    ],
+
+    "⚡ Bright & Neon": [
+
+      ["💜 Cyber Purple", "#9D00FF", "#6800a8", "#ffffff"],
+      ["🟢 Neon Green", "#39FF14", "#19b800", "#111827"],
+      ["💗 Hot Pink", "#FF1493", "#b00065", "#ffffff"],
+      ["🩵 Vibrant Cyan", "#00FFFF", "#00a8a8", "#111827"],
+      ["💖 Bright Magenta", "#FF00FF", "#b000b0", "#ffffff"]
+
+    ],
+
+    "🌸 Soft & Pastel": [
+
+      ["💜 Lavender Mist", "#E6E6FA", "#b5b5d8", "#111827"],
+      ["🍑 Peach Puff", "#FFDAB9", "#e8b98f", "#111827"],
+      ["🌹 Soft Rose", "#FFC0CB", "#e58a9b", "#111827"],
+      ["🩵 Baby Blue", "#89CFF0", "#5b9fc2", "#111827"],
+      ["🍵 Matcha Cream", "#D0F0C0", "#9bc58c", "#111827"]
+
+    ]
+
+  };
+
+
+  const themes = [];
+
+
+  function createThemeButtons() {
+
+    const container =
+      document.getElementById("themeContainer");
+
+    container.innerHTML = "";
+
+    Object.keys(themeGroups).forEach(function(groupName) {
+
+      const section =
+        document.createElement("div");
+
+      section.className = "theme-section";
+
+      const title =
+        document.createElement("h3");
+
+      title.textContent = groupName;
+
+      section.appendChild(title);
+
+
+      themeGroups[groupName].forEach(function(theme) {
+
+        const name = theme[0];
+        const background = theme[1];
+        const header = theme[2];
+        const text = theme[3];
+
+        themes.push({
+          name: name,
+          background: background,
+          header: header,
+          text: text
+        });
+
+
+        const button =
+          document.createElement("button");
+
+        button.className = "theme-button";
+        button.textContent = name;
+
+        button.onclick = function() {
+
+          setTheme(
+            background,
+            header,
+            text,
+            name
+          );
+
+        };
+
+        section.appendChild(button);
+
+      });
+
+
+      container.appendChild(section);
+
+    });
+
+  }
+
+
+  function setTheme(
+    background,
+    header,
+    text,
+    name
+  ) {
 
     document.documentElement.style.setProperty(
       "--background",
@@ -498,310 +546,12 @@
       text
     );
 
-    document.body.style.background = background;
-    document.body.style.color = text;
 
-    document.querySelector("header").style.background = header;
-
-    if (name) {
-
-      document.getElementById("dailyStatus").textContent =
-        "🎨 Current theme: " + name;
-
-    }
+    document.getElementById("dailyStatus").textContent =
+      "🎨 Current theme: " + name;
 
   }
 
-
-  /*
-    ==========================
-          ALL 39 THEMES
-    ==========================
-  */
-
-  const themes = [
-
-    {
-      name: "🌑 Black Hole",
-      background: "#000000",
-      header: "#080808",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🌊 Ocean",
-      background: "#102a43",
-      header: "#174a7e",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🟢 Matrix",
-      background: "#092e1b",
-      header: "#14532d",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🟣 Purple Void",
-      background: "#24103d",
-      header: "#4c1d95",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🔥 Lava",
-      background: "#3b0a0a",
-      header: "#7f1d1d",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🌌 Galaxy",
-      background: "#10152e",
-      header: "#312e81",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🌈 Rainbow",
-      background: "#351047",
-      header: "#86198f",
-      text: "#ffffff"
-    },
-
-    {
-      name: "❄️ Ice",
-      background: "#dbeafe",
-      header: "#60a5fa",
-      text: "#111827"
-    },
-
-    {
-      name: "🌅 Sunset",
-      background: "#4a1608",
-      header: "#c2410c",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🌲 Forest",
-      background: "#052e16",
-      header: "#166534",
-      text: "#ffffff"
-    },
-
-    {
-      name: "⚡ Electric",
-      background: "#172554",
-      header: "#2563eb",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🌙 Midnight",
-      background: "#09090b",
-      header: "#27272a",
-      text: "#ffffff"
-    },
-
-    {
-      name: "☀️ Daylight",
-      background: "#f3f4f6",
-      header: "#d1d5db",
-      text: "#111827"
-    },
-
-    {
-      name: "🍭 Candy",
-      background: "#4a044e",
-      header: "#db2777",
-      text: "#ffffff"
-    },
-
-    {
-      name: "❤️ Crimson Red",
-      background: "#DC143C",
-      header: "#a30f2d",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🪸 Coral Pink",
-      background: "#FF7F50",
-      header: "#e85d32",
-      text: "#111827"
-    },
-
-    {
-      name: "🟠 Electric Orange",
-      background: "#FF6F00",
-      header: "#c65300",
-      text: "#111827"
-    },
-
-    {
-      name: "🟡 Sunset Gold",
-      background: "#FFD700",
-      header: "#d4af00",
-      text: "#111827"
-    },
-
-    {
-      name: "🟨 Mustard Yellow",
-      background: "#E5A93C",
-      header: "#b8862f",
-      text: "#111827"
-    },
-
-    {
-      name: "☁️ Sky Blue",
-      background: "#87CEEB",
-      header: "#4682b4",
-      text: "#111827"
-    },
-
-    {
-      name: "💜 Electric Indigo",
-      background: "#4B0082",
-      header: "#31005c",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🩵 Teal Green",
-      background: "#008080",
-      header: "#005f5f",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🌿 Mint Fresh",
-      background: "#98FF98",
-      header: "#5dcc5d",
-      text: "#111827"
-    },
-
-    {
-      name: "🌃 Midnight Navy",
-      background: "#000080",
-      header: "#000052",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🌱 Sage Green",
-      background: "#8A9A86",
-      header: "#647260",
-      text: "#111827"
-    },
-
-    {
-      name: "🧱 Terracotta",
-      background: "#E2725B",
-      header: "#ad4d3a",
-      text: "#111827"
-    },
-
-    {
-      name: "🟤 Warm Ochre",
-      background: "#CC7722",
-      header: "#965518",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🫒 Olive Drab",
-      background: "#6B8E23",
-      header: "#4f6a19",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🤎 Taupe Brown",
-      background: "#483C32",
-      header: "#302820",
-      text: "#ffffff"
-    },
-
-    {
-      name: "💜 Cyber Purple",
-      background: "#9D00FF",
-      header: "#6800a8",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🟢 Neon Green",
-      background: "#39FF14",
-      header: "#19b800",
-      text: "#111827"
-    },
-
-    {
-      name: "💗 Hot Pink",
-      background: "#FF1493",
-      header: "#b00065",
-      text: "#ffffff"
-    },
-
-    {
-      name: "🩵 Vibrant Cyan",
-      background: "#00FFFF",
-      header: "#00a8a8",
-      text: "#111827"
-    },
-
-    {
-      name: "💖 Bright Magenta",
-      background: "#FF00FF",
-      header: "#b000b0",
-      text: "#ffffff"
-    },
-
-    {
-      name: "💜 Lavender Mist",
-      background: "#E6E6FA",
-      header: "#b5b5d8",
-      text: "#111827"
-    },
-
-    {
-      name: "🍑 Peach Puff",
-      background: "#FFDAB9",
-      header: "#e8b98f",
-      text: "#111827"
-    },
-
-    {
-      name: "🌹 Soft Rose",
-      background: "#FFC0CB",
-      header: "#e58a9b",
-      text: "#111827"
-    },
-
-    {
-      name: "🩵 Baby Blue",
-      background: "#89CFF0",
-      header: "#5b9fc2",
-      text: "#111827"
-    },
-
-    {
-      name: "🍵 Matcha Cream",
-      background: "#D0F0C0",
-      header: "#9bc58c",
-      text: "#111827"
-    }
-
-  ];
-
-
-  /*
-    ==========================
-         RANDOM THEME
-    ==========================
-  */
 
   function randomTheme() {
 
@@ -818,12 +568,6 @@
   }
 
 
-  /*
-    ==========================
-          RESET THEME
-    ==========================
-  */
-
   function resetTheme() {
 
     setTheme(
@@ -836,39 +580,25 @@
   }
 
 
-  /*
-    ==========================
-        DAILY THEME SYSTEM
-    ==========================
-  */
-
   function dailyTheme() {
 
-    const day = new Date().getDay();
-
-    /*
-      Sunday    = 0
-      Monday    = 1
-      Tuesday   = 2
-      Wednesday = 3
-      Thursday  = 4
-      Friday    = 5
-      Saturday  = 6
-    */
+    const day =
+      new Date().getDay();
 
     const dailyThemes = [
 
-      themes[11], // Sunday - Midnight
-      themes[0],  // Monday - Black Hole
-      themes[1],  // Tuesday - Ocean
-      themes[2],  // Wednesday - Matrix
-      themes[3],  // Thursday - Purple Void
-      themes[4],  // Friday - Lava
-      themes[5]   // Saturday - Galaxy
+      themes[11],
+      themes[0],
+      themes[1],
+      themes[2],
+      themes[3],
+      themes[4],
+      themes[5]
 
     ];
 
-    const today = dailyThemes[day];
+    const today =
+      dailyThemes[day];
 
     setTheme(
       today.background,
@@ -880,11 +610,7 @@
   }
 
 
-  /*
-    ==========================
-       START DAILY THEME
-    ==========================
-  */
+  createThemeButtons();
 
   dailyTheme();
 
