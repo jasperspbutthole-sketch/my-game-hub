@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>My Game Hub</title>
 
   <style>
@@ -13,6 +12,7 @@
       background: #111827;
       color: white;
       text-align: center;
+      transition: 0.3s;
     }
 
     header {
@@ -26,7 +26,7 @@
     }
 
     .buttons {
-      margin-top: 30px;
+      margin: 30px;
     }
 
     button {
@@ -42,43 +42,119 @@
       transform: scale(1.05);
     }
 
-    .content {
-      margin: 40px auto;
-      max-width: 800px;
+    .page {
+      display: none;
+      max-width: 900px;
+      margin: 30px auto;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .card {
+      display: inline-block;
+      background: #1f2937;
+      padding: 25px;
+      margin: 10px;
+      border-radius: 15px;
+      min-width: 180px;
+    }
+
+    .back {
+      background: #374151;
+      color: white;
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>🎮 My Game Hub</h1>
-    <p>Your games and media in one place</p>
-  </header>
+<header>
+  <h1>🎮 My Game Hub</h1>
+  <p>Your games and media in one place</p>
+</header>
 
-  <div class="buttons">
-    <button onclick="showMessage('🎮 Games coming soon!')">
-      🎮 Games
-    </button>
+<div class="buttons">
+  <button onclick="showPage('home')">🏠 Home</button>
+  <button onclick="showPage('games')">🎮 Games</button>
+  <button onclick="showPage('media')">🎬 Media</button>
+  <button onclick="showPage('settings')">⚙️ Settings</button>
+</div>
 
-    <button onclick="showMessage('🎬 Media coming soon!')">
-      🎬 Media
-    </button>
+<!-- HOME -->
+<div id="home" class="page active">
+  <h2>Welcome! 👋</h2>
+  <p>Choose something from the menu above.</p>
+</div>
 
-    <button onclick="showMessage('⚙️ Settings coming soon!')">
-      ⚙️ Settings
-    </button>
+<!-- GAMES -->
+<div id="games" class="page">
+  <h2>🎮 Games</h2>
+
+  <div class="card">
+    <h3>Game 1</h3>
+    <button onclick="alert('Add your game link here!')">▶ Play</button>
   </div>
 
-  <div class="content">
-    <h2 id="message">Welcome to My Game Hub!</h2>
+  <div class="card">
+    <h3>Game 2</h3>
+    <button onclick="alert('Add your game link here!')">▶ Play</button>
   </div>
 
-  <script>
-    function showMessage(text) {
-      document.getElementById("message").textContent = text;
-    }
-  </script>
+  <br>
+  <button class="back" onclick="showPage('home')">← Back</button>
+</div>
+
+<!-- MEDIA -->
+<div id="media" class="page">
+  <h2>🎬 Media</h2>
+  <p>Add your media links here.</p>
+  <button class="back" onclick="showPage('home')">← Back</button>
+</div>
+
+<!-- SETTINGS -->
+<div id="settings" class="page">
+  <h2>⚙️ Settings</h2>
+
+  <button onclick="blackHole()">🌑 Black Hole</button>
+  <button onclick="blueTheme()">🔵 Blue</button>
+  <button onclick="greenTheme()">🟢 Green</button>
+  <button onclick="resetTheme()">🔄 Reset</button>
+
+  <br><br>
+  <button class="back" onclick="showPage('home')">← Back</button>
+</div>
+
+<script>
+  function showPage(page) {
+    document.querySelectorAll(".page").forEach(function(p) {
+      p.classList.remove("active");
+    });
+
+    document.getElementById(page).classList.add("active");
+  }
+
+  function blackHole() {
+    document.body.style.background = "#000000";
+    document.querySelector("header").style.background = "#080808";
+  }
+
+  function blueTheme() {
+    document.body.style.background = "#102a43";
+    document.querySelector("header").style.background = "#174a7e";
+  }
+
+  function greenTheme() {
+    document.body.style.background = "#092e1b";
+    document.querySelector("header").style.background = "#14532d";
+  }
+
+  function resetTheme() {
+    document.body.style.background = "#111827";
+    document.querySelector("header").style.background = "#1f2937";
+  }
+</script>
 
 </body>
 </html>
