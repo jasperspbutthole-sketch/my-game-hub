@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Game Hub</title>
+<title>Calculator</title>
 
 <style>
 :root {
@@ -142,7 +142,8 @@ button:hover {
 #gameFrame,
 #mediaFrame {
   width: 100%;
-  height: 650px;
+  height: 700px;
+  min-height: 500px;
   border: none;
   border-radius: 12px;
   background: #000;
@@ -157,37 +158,220 @@ button:hover {
 .hidden {
   display: none;
 }
+
+
+/* CALCULATOR HOME */
+
+#calculatorHome {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.calculator-wrap {
+  width: min(360px, 94vw);
+}
+
+.calculator {
+  background: #f3f4f6;
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+}
+
+.calculator-display {
+  width: 100%;
+  height: 72px;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  text-align: right;
+  font-size: 30px;
+  background: #ffffff;
+  color: #111827;
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+}
+
+.calculator-grid button {
+  margin: 0;
+  padding: 0;
+  height: 58px;
+  border-radius: 12px;
+  font-size: 20px;
+  background: #ffffff;
+}
+
+.calculator-grid button:hover {
+  transform: none;
+  background: #e5e7eb;
+}
+
+.calculator-title {
+  color: #111827;
+  margin: 0 0 12px;
+}
+
+#hubEntry {
+  width: 13px;
+  height: 13px;
+  min-width: 13px;
+  padding: 0;
+  margin: 16px auto 0;
+  display: block;
+  border-radius: 2px;
+  background: #e5e7eb;
+  border: 1px solid #d1d5db;
+  box-shadow: none;
+  opacity: 0.95;
+}
+
+#hubEntry:hover {
+  transform: none;
+  background: #d1d5db;
+}
+
+#codePanel {
+  display: none;
+  margin-top: 14px;
+}
+
+#codePanel.active {
+  display: block;
+}
+
+.code-title {
+  color: #111827;
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.code-display {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #111827;
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 8px;
+}
+
+.code-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  margin-top: 9px;
+}
+
+.code-pad button {
+  margin: 0;
+  padding: 0;
+  height: 48px;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.code-error {
+  min-height: 20px;
+  margin: 7px 0 0;
+  color: #b91c1c;
+  font-size: 13px;
+}
+
+#hubContent {
+  display: none;
+}
+
+#hubContent.unlocked {
+  display: block;
+}
+
 </style>
 </head>
 
 <body>
+
+<!-- CALCULATOR HOME -->
+<div id="calculatorHome">
+  <div class="calculator-wrap">
+    <div class="calculator">
+      <h2 class="calculator-title">Calculator</h2>
+      <input id="calcDisplay" class="calculator-display" value="0" readonly>
+
+      <div class="calculator-grid">
+        <button onclick="calcClear()">C</button>
+        <button onclick="calcBackspace()">⌫</button>
+        <button onclick="calcInput('%')">%</button>
+        <button onclick="calcInput('/')">÷</button>
+
+        <button onclick="calcInput('7')">7</button>
+        <button onclick="calcInput('8')">8</button>
+        <button onclick="calcInput('9')">9</button>
+        <button onclick="calcInput('*')">×</button>
+
+        <button onclick="calcInput('4')">4</button>
+        <button onclick="calcInput('5')">5</button>
+        <button onclick="calcInput('6')">6</button>
+        <button onclick="calcInput('-')">−</button>
+
+        <button onclick="calcInput('1')">1</button>
+        <button onclick="calcInput('2')">2</button>
+        <button onclick="calcInput('3')">3</button>
+        <button onclick="calcInput('+')">+</button>
+
+        <button onclick="calcInput('0')">0</button>
+        <button onclick="calcInput('.')">.</button>
+        <button onclick="calcCalculate()">=</button>
+        <button onclick="calcClear()">AC</button>
+      </div>
+
+      <button id="hubEntry" aria-label="Open Game Hub" title="Open Game Hub" onclick="openCodePanel()"></button>
+
+      <div id="codePanel">
+        <div class="code-title">Enter code</div>
+        <input id="codeDisplay" class="code-display" value="" readonly>
+        <div class="code-pad">
+          <button onclick="codeInput('1')">1</button>
+          <button onclick="codeInput('2')">2</button>
+          <button onclick="codeInput('3')">3</button>
+          <button onclick="codeInput('4')">4</button>
+          <button onclick="codeInput('5')">5</button>
+          <button onclick="codeInput('6')">6</button>
+          <button onclick="codeInput('7')">7</button>
+          <button onclick="codeInput('8')">8</button>
+          <button onclick="codeInput('9')">9</button>
+          <button onclick="codeClear()">Clear</button>
+          <button onclick="codeInput('0')">0</button>
+          <button onclick="checkCode()">Enter</button>
+        </div>
+        <div id="codeError" class="code-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="hubContent">
 
 <header>
   <h1>🎮 My Game Hub</h1>
   <p>Your games and media in one place</p>
 </header>
 
-
 <div class="buttons">
-
-  <button onclick="showPage('home')">
-    🏠 Home
-  </button>
-
-  <button onclick="showPage('games')">
-    🎮 Games
-  </button>
-
-  <button onclick="showPage('media')">
-    🎬 Media
-  </button>
-
-  <button onclick="showPage('settings')">
-    ⚙️ Settings
-  </button>
-
+  <button onclick="showPage('home')">🏠 Home</button>
+  <button onclick="showPage('games')">🎮 Games</button>
+  <button onclick="showPage('media')">🎬 Media</button>
+  <button onclick="showPage('settings')">⚙️ Settings</button>
 </div>
-
 
 <!-- HOME -->
 
@@ -212,113 +396,139 @@ button:hover {
 
   <!-- GAME CARDS -->
 
+
   <div id="gameCards">
 
     <div class="card">
-
-      <h3>🕹️ CrazyGames</h3>
-
-      <p>
-        Browse CrazyGames inside the hub.
-      </p>
-
+      <h3>🚗 Highway Traffic</h3>
+      <p>Drive through traffic in an embeddable browser game.</p>
       <button onclick="openGame(
-        'https://www.crazygames.com/',
-        '🕹️ CrazyGames'
-      )">
-        ▶️ Open Inside Hub
-      </button>
-
-    </div>
-
-
-    <div class="card">
-
-      <h3>🧱 Bloxd.io</h3>
-
-      <p>
-        Try loading Bloxd.io inside the hub.
-      </p>
-
-      <button onclick="openGame(
-        'https://www.crazygames.com/game/bloxd-io',
-        '🧱 Bloxd.io'
+        'https://www.onlinegames.io/games/2022/unity/highway-traffic/index.html',
+        '🚗 Highway Traffic'
       )">
         ▶️ Play
       </button>
-
     </div>
 
-
     <div class="card">
-
-      <h3>🏎️ PolyTrack</h3>
-
-      <p>
-        Browser racing game.
-      </p>
-
+      <h3>🔥 Stack Fire Ball</h3>
+      <p>Drop the ball through the rotating tower.</p>
       <button onclick="openGame(
-        'https://www.crazygames.com/game/polytrack',
-        '🏎️ PolyTrack'
+        'https://www.onlinegames.io/games/2021/unity/stack-fire-ball/index.html',
+        '🔥 Stack Fire Ball'
       )">
         ▶️ Play
       </button>
-
     </div>
 
-
     <div class="card">
-
-      <h3>🌌 Space Waves</h3>
-
-      <p>
-        Dodge obstacles and survive.
-      </p>
-
+      <h3>🏖️ Marble Run</h3>
+      <p>Roll through colorful obstacle courses.</p>
       <button onclick="openGame(
-        'https://www.crazygames.com/game/space-waves',
-        '🌌 Space Waves'
+        'https://cloud.onlinegames.io/games/2026/galatrix/marble-run/game.html',
+        '🏖️ Marble Run'
       )">
         ▶️ Play
       </button>
-
     </div>
 
-
     <div class="card">
-
-      <h3>🔤 Word Wipe</h3>
-
-      <p>
-        Find words and clear the board.
-      </p>
-
+      <h3>⛳ Golf Bit</h3>
+      <p>Time your shots and work your way through the courses.</p>
       <button onclick="openGame(
-        'https://www.crazygames.com/game/word-wipe',
-        '🔤 Word Wipe'
+        'https://cloud.onlinegames.io/games/2026/construct/328/golf-bit/game.html',
+        '⛳ Golf Bit'
       )">
         ▶️ Play
       </button>
-
     </div>
 
-
     <div class="card">
-
-      <h3>🎱 8 Ball Billiards</h3>
-
-      <p>
-        Play billiards in your browser.
-      </p>
-
+      <h3>🎱 8 Ball Pool Billiard</h3>
+      <p>Play a digital game of pool against an opponent.</p>
       <button onclick="openGame(
-        'https://www.crazygames.com/game/8-ball-billiards-classic',
-        '🎱 8 Ball Billiards'
+        'https://www.onlinegames.io/games/2022/unity3/8-ball-pool-billiard/index.html',
+        '🎱 8 Ball Pool Billiard'
       )">
         ▶️ Play
       </button>
+    </div>
 
+    <div class="card">
+      <h3>🔷 Geometry Vector</h3>
+      <p>Arcade-style geometry gameplay right in the hub.</p>
+      <button onclick="openGame(
+        'https://cloud.onlinegames.io/games/2026/construct/329/geometry-vector/game.html',
+        '🔷 Geometry Vector'
+      )">
+        ▶️ Play
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>🍰 Cake Match Puzzle</h3>
+      <p>Match pieces and clear the puzzle board.</p>
+      <button onclick="openGame(
+        'https://cloud.onlinegames.io/games/2024/unity3/cake-match-puzzle/index-og.html',
+        '🍰 Cake Match Puzzle'
+      )">
+        ▶️ Play
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Pinball Simulator</h3>
+      <p>Keep the ball moving and rack up points.</p>
+      <button onclick="openGame(
+        'https://www.onlinegames.io/games/2021/unity2/pinball-simulator/index.html',
+        '🎯 Pinball Simulator'
+      )">
+        ▶️ Play
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>🧩 Tile Match</h3>
+      <p>Match tiles and clear the board.</p>
+      <button onclick="openGame(
+        'https://cloud.onlinegames.io/games/2025/unity/tile-match/index-og.html',
+        '🧩 Tile Match'
+      )">
+        ▶️ Play
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>🀄 Mahjong</h3>
+      <p>Match free tiles and clear the puzzle.</p>
+      <button onclick="openGame(
+        'https://cloud.onlinegames.io/games/2025/unity/mahjong/index-og.html',
+        '🀄 Mahjong'
+      )">
+        ▶️ Play
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>🃏 Solitaire</h3>
+      <p>Sort the cards and clear the deck.</p>
+      <button onclick="openGame(
+        'https://cloud.onlinegames.io/games/2025/html/solitaire/index-og.html',
+        '🃏 Solitaire'
+      )">
+        ▶️ Play
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>🍪 Cookie Clicker Pro</h3>
+      <p>Click, upgrade, and build your cookie empire.</p>
+      <button onclick="openGame(
+        'https://cloud.onlinegames.io/games/2025/unity/cookie-clicker-pro/index-og.html',
+        '🍪 Cookie Clicker Pro'
+      )">
+        ▶️ Play
+      </button>
     </div>
 
   </div>
@@ -334,12 +544,15 @@ button:hover {
 
     <iframe
       id="gameFrame"
+      title="Game"
+      allow="autoplay; fullscreen; gamepad; pointer-lock"
       allowfullscreen>
     </iframe>
 
     <p class="viewer-warning">
-      If the game refuses to load here, its website may block
-      being displayed inside another website.
+      These games use the embed URLs supplied for iframe use by
+      OnlineGames.io. If one still refuses to load, that game may
+      have changed its embed settings.
     </p>
 
     <button onclick="closeGame()">
@@ -544,8 +757,80 @@ button:hover {
 </div>
 
 
+</div>
+
 <script>
 
+
+
+
+/* CALCULATOR */
+
+let calcExpression = "";
+
+function updateCalcDisplay(){
+  document.getElementById("calcDisplay").value = calcExpression || "0";
+}
+
+function calcInput(value){
+  if(calcExpression === "Error") calcExpression = "";
+  calcExpression += value;
+  updateCalcDisplay();
+}
+
+function calcClear(){
+  calcExpression = "";
+  updateCalcDisplay();
+}
+
+function calcBackspace(){
+  calcExpression = calcExpression.slice(0, -1);
+  updateCalcDisplay();
+}
+
+function calcCalculate(){
+  try{
+    if(!calcExpression) return;
+    const safeExpression = calcExpression.replace(/%/g, "/100");
+    if(!/^[0-9+\-*/().\s]+$/.test(safeExpression)) throw new Error();
+    const result = Function("\"use strict\"; return (" + safeExpression + ")")();
+    if(!Number.isFinite(result)) throw new Error();
+    calcExpression = String(result);
+  }catch(e){
+    calcExpression = "Error";
+  }
+  updateCalcDisplay();
+}
+
+function openCodePanel(){
+  document.getElementById("codePanel").classList.add("active");
+  document.getElementById("codeDisplay").focus();
+}
+
+function codeInput(value){
+  const display = document.getElementById("codeDisplay");
+  if(display.value.length < 4){
+    display.value += value;
+  }
+  document.getElementById("codeError").textContent = "";
+}
+
+function codeClear(){
+  document.getElementById("codeDisplay").value = "";
+  document.getElementById("codeError").textContent = "";
+}
+
+function checkCode(){
+  const display = document.getElementById("codeDisplay");
+  if(display.value === "1234"){
+    document.getElementById("calculatorHome").style.display = "none";
+    document.getElementById("hubContent").classList.add("unlocked");
+    showPage("home");
+  }else{
+    document.getElementById("codeError").textContent = "Incorrect code.";
+    display.value = "";
+  }
+}
 
 /* PAGE SWITCHING */
 
@@ -582,6 +867,10 @@ function openGame(url,title){
   document
     .getElementById("gameTitle")
     .textContent = title;
+
+  document
+    .getElementById("gameFrame")
+    .title = title;
 
   document
     .getElementById("gameFrame")
@@ -945,4 +1234,3 @@ dailyTheme();
 
 </body>
 </html>
-   
