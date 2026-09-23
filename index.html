@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Game Hub</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111827;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 30px;
+      background: #1f2937;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 40px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 15px 25px;
+      margin: 8px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .content {
+      margin: 40px auto;
+      max-width: 800px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🎮 My Game Hub</h1>
+    <p>Your games and media in one place</p>
+  </header>
+
+  <div class="buttons">
+    <button onclick="showMessage('🎮 Games coming soon!')">
+      🎮 Games
+    </button>
+
+    <button onclick="showMessage('🎬 Media coming soon!')">
+      🎬 Media
+    </button>
+
+    <button onclick="showMessage('⚙️ Settings coming soon!')">
+      ⚙️ Settings
+    </button>
+  </div>
+
+  <div class="content">
+    <h2 id="message">Welcome to My Game Hub!</h2>
+  </div>
+
+  <script>
+    function showMessage(text) {
+      document.getElementById("message").textContent = text;
+    }
+  </script>
+
+</body>
+</html>
