@@ -1,123 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Game Hub</title>
 
-  <title>My Game Hub</title>
+<style>
+:root{
+  --background:#111827;
+  --header:#1f2937;
+  --card:#1f2937;
+  --text:#ffffff;
+}
 
-  <style>
-    :root {
-      --background: #111827;
-      --header: #1f2937;
-      --card: #1f2937;
-      --text: #ffffff;
-    }
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:var(--background);
+  color:var(--text);
+  text-align:center;
+  transition:.3s;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--background);
-      color: var(--text);
-      text-align: center;
-      transition: 0.3s;
-    }
+header{
+  padding:30px;
+  background:var(--header);
+  transition:.3s;
+}
 
-    header {
-      padding: 30px;
-      background: var(--header);
-      transition: 0.3s;
-    }
+h1{
+  margin:0;
+  font-size:40px;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 40px;
-    }
+.buttons{
+  margin:30px auto;
+  max-width:1100px;
+}
 
-    .buttons {
-      margin: 30px auto;
-      max-width: 1000px;
-    }
+button,.site-button{
+  display:inline-block;
+  padding:15px 25px;
+  margin:8px;
+  border:0;
+  border-radius:12px;
+  font-size:16px;
+  cursor:pointer;
+  transition:.2s;
+  background:white;
+  color:#111827;
+  text-decoration:none;
+}
 
-    button,
-    .site-button {
-      display: inline-block;
-      padding: 15px 25px;
-      margin: 8px;
-      border: none;
-      border-radius: 12px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.2s;
-      background: white;
-      color: #111827;
-      text-decoration: none;
-    }
+button:hover,.site-button:hover{
+  transform:scale(1.05);
+}
 
-    button:hover,
-    .site-button:hover {
-      transform: scale(1.05);
-    }
+.page{
+  display:none;
+  max-width:1100px;
+  margin:30px auto;
+  padding:0 15px;
+}
 
-    .page {
-      display: none;
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 0 15px;
-    }
+.active{
+  display:block;
+}
 
-    .active {
-      display: block;
-    }
+.card{
+  display:inline-block;
+  vertical-align:top;
+  background:var(--card);
+  padding:25px;
+  margin:10px;
+  border-radius:15px;
+  min-width:220px;
+  max-width:300px;
+  transition:.3s;
+}
 
-    .card {
-      display: inline-block;
-      vertical-align: top;
-      background: var(--card);
-      padding: 25px;
-      margin: 10px;
-      border-radius: 15px;
-      min-width: 220px;
-      max-width: 300px;
-      transition: 0.3s;
-    }
+.card h3{
+  margin-top:0;
+}
 
-    .card h3 {
-      margin-top: 0;
-    }
+.back{
+  background:#374151;
+  color:white;
+}
 
-    .back {
-      background: #374151;
-      color: white;
-    }
+.theme-button{
+  min-width:170px;
+}
 
-    .theme-button {
-      min-width: 170px;
-    }
+#dailyStatus{
+  margin:15px;
+  font-size:18px;
+  font-weight:bold;
+}
 
-    #dailyStatus {
-      margin: 15px;
-      font-size: 18px;
-      font-weight: bold;
-    }
+.theme-section{
+  margin:30px 0;
+}
 
-    .theme-section {
-      margin: 30px 0;
-    }
+.theme-section h3{
+  margin-bottom:15px;
+}
 
-    .theme-section h3 {
-      margin-bottom: 15px;
-    }
-
-    .site-button {
-      min-width: 190px;
-    }
-
-    .description {
-      opacity: 0.9;
-      line-height: 1.5;
-    }
-  </style>
+.description{
+  opacity:.9;
+  line-height:1.5;
+}
+</style>
 </head>
 
 <body>
@@ -142,7 +135,7 @@
 
   <p>Choose something from the menu above.</p>
 
-  <p id="dailyStatus"></p>
+  <p id="homeStatus"></p>
 
 </div>
 
@@ -153,11 +146,9 @@
   <h2>🎮 Games</h2>
 
   <div class="card">
-
     <h3>🕹️ CrazyGames</h3>
-
     <p class="description">
-      Thousands of browser games you can play online.
+      Thousands of browser games.
     </p>
 
     <a
@@ -167,83 +158,102 @@
       rel="noopener noreferrer">
       🎮 Open CrazyGames
     </a>
-
   </div>
 
 
   <div class="card">
-
-    <h3>🧱 Bloxd.io</h3>
-
+    <h3>🧱 Bloxd io</h3>
     <p class="description">
-      Find this game on CrazyGames.
+      Play Bloxd io on CrazyGames.
     </p>
 
     <a
       class="site-button"
-      href="https://www.crazygames.com/"
+      href="https://www.crazygames.com/game/bloxd-io"
       target="_blank"
       rel="noopener noreferrer">
-      ▶ Play
+      ▶️ Play
     </a>
-
   </div>
 
 
   <div class="card">
-
     <h3>🏎️ PolyTrack</h3>
-
     <p class="description">
-      A fast browser racing game.
+      Fast browser racing.
     </p>
 
     <a
       class="site-button"
-      href="https://www.crazygames.com/"
+      href="https://www.crazygames.com/game/polytrack"
       target="_blank"
       rel="noopener noreferrer">
-      ▶ Play
+      ▶️ Play
     </a>
-
   </div>
 
 
   <div class="card">
-
     <h3>🌌 Space Waves</h3>
-
     <p class="description">
-      Dodge obstacles and survive the waves.
+      Dodge obstacles and survive.
     </p>
 
     <a
       class="site-button"
-      href="https://www.crazygames.com/"
+      href="https://www.crazygames.com/game/space-waves"
       target="_blank"
       rel="noopener noreferrer">
-      ▶ Play
+      ▶️ Play
     </a>
-
   </div>
 
 
   <div class="card">
-
-    <h3>🧩 Word Wipe</h3>
-
+    <h3>🔤 Word Wipe</h3>
     <p class="description">
       Find words and clear the board.
     </p>
 
     <a
       class="site-button"
-      href="https://www.crazygames.com/"
+      href="https://www.crazygames.com/game/word-wipe"
       target="_blank"
       rel="noopener noreferrer">
-      ▶ Play
+      ▶️ Play
     </a>
+  </div>
 
+
+  <div class="card">
+    <h3>🎱 8 Ball Billiards</h3>
+    <p class="description">
+      Play billiards in your browser.
+    </p>
+
+    <a
+      class="site-button"
+      href="https://www.crazygames.com/game/8-ball-billiards-classic"
+      target="_blank"
+      rel="noopener noreferrer">
+      ▶️ Play
+    </a>
+  </div>
+
+
+  <div class="card">
+    <h3>🏃 Platform Games</h3>
+    <p class="description">
+      Browse CrazyGames platform games.
+    </p>
+
+    <a
+      class="site-button"
+      href="https://www.crazygames.com/t/platform"
+      target="_blank"
+      rel="noopener noreferrer">
+      🕹️ Browse
+    </a>
   </div>
 
 
@@ -261,8 +271,8 @@
 
   <h2>🎬 Movies & Media</h2>
 
-  <div class="card">
 
+  <div class="card">
     <h3>🍿 Tubi</h3>
 
     <p class="description">
@@ -276,16 +286,48 @@
       rel="noopener noreferrer">
       🍿 Open Tubi
     </a>
-
   </div>
 
 
   <div class="card">
-
-    <h3>🎬 Pluto TV</h3>
+    <h3>🎥 Tubi Movies</h3>
 
     <p class="description">
-      Free movies, shows, and live TV.
+      Browse Tubi's movie selection.
+    </p>
+
+    <a
+      class="site-button"
+      href="https://tubitv.com/movies"
+      target="_blank"
+      rel="noopener noreferrer">
+      🎬 Browse Movies
+    </a>
+  </div>
+
+
+  <div class="card">
+    <h3>📺 Pluto TV</h3>
+
+    <p class="description">
+      Free movies, shows and live TV.
+    </p>
+
+    <a
+      class="site-button"
+      href="https://pluto.tv/"
+      target="_blank"
+      rel="noopener noreferrer">
+      📺 Open Pluto TV
+    </a>
+  </div>
+
+
+  <div class="card">
+    <h3>🍿 Pluto Movies</h3>
+
+    <p class="description">
+      Browse Pluto TV's movie selection.
     </p>
 
     <a
@@ -293,18 +335,16 @@
       href="https://pluto.tv/us/movies/"
       target="_blank"
       rel="noopener noreferrer">
-      🎬 Open Pluto TV
+      🎬 Browse Movies
     </a>
-
   </div>
 
 
   <div class="card">
-
     <h3>▶️ YouTube</h3>
 
     <p class="description">
-      Videos, shows, trailers, and more.
+      Videos, trailers and more.
     </p>
 
     <a
@@ -314,7 +354,6 @@
       rel="noopener noreferrer">
       ▶️ Open YouTube
     </a>
-
   </div>
 
 
@@ -365,254 +404,262 @@
 
 <script>
 
-  function showPage(page) {
+function showPage(page){
 
-    document.querySelectorAll(".page").forEach(function(p) {
-      p.classList.remove("active");
-    });
+  document.querySelectorAll(".page").forEach(function(p){
+    p.classList.remove("active");
+  });
 
-    document.getElementById(page).classList.add("active");
-
-  }
-
-
-  const themeGroups = {
-
-    "🎨 Original Themes": [
-
-      ["🌑 Black Hole", "#000000", "#080808", "#ffffff"],
-      ["🌊 Ocean", "#102a43", "#174a7e", "#ffffff"],
-      ["🟢 Matrix", "#092e1b", "#14532d", "#ffffff"],
-      ["🟣 Purple Void", "#24103d", "#4c1d95", "#ffffff"],
-      ["🔥 Lava", "#3b0a0a", "#7f1d1d", "#ffffff"],
-      ["🌌 Galaxy", "#10152e", "#312e81", "#ffffff"],
-      ["🌈 Rainbow", "#351047", "#86198f", "#ffffff"],
-      ["❄️ Ice", "#dbeafe", "#60a5fa", "#111827"],
-      ["🌅 Sunset", "#4a1608", "#c2410c", "#ffffff"],
-      ["🌲 Forest", "#052e16", "#166534", "#ffffff"],
-      ["⚡ Electric", "#172554", "#2563eb", "#ffffff"],
-      ["🌙 Midnight", "#09090b", "#27272a", "#ffffff"],
-      ["☀️ Daylight", "#f3f4f6", "#d1d5db", "#111827"],
-      ["🍭 Candy", "#4a044e", "#db2777", "#ffffff"]
-
-    ],
-
-    "🔥 Warm & Energetic": [
-
-      ["❤️ Crimson Red", "#DC143C", "#a30f2d", "#ffffff"],
-      ["🪸 Coral Pink", "#FF7F50", "#e85d32", "#111827"],
-      ["🟠 Electric Orange", "#FF6F00", "#c65300", "#111827"],
-      ["🟡 Sunset Gold", "#FFD700", "#d4af00", "#111827"],
-      ["🟨 Mustard Yellow", "#E5A93C", "#b8862f", "#111827"]
-
-    ],
-
-    "❄️ Cool & Calm": [
-
-      ["☁️ Sky Blue", "#87CEEB", "#4682b4", "#111827"],
-      ["💜 Electric Indigo", "#4B0082", "#31005c", "#ffffff"],
-      ["🩵 Teal Green", "#008080", "#005f5f", "#ffffff"],
-      ["🌿 Mint Fresh", "#98FF98", "#5dcc5d", "#111827"],
-      ["🌃 Midnight Navy", "#000080", "#000052", "#ffffff"]
-
-    ],
-
-    "🌿 Earthy & Muted": [
-
-      ["🌱 Sage Green", "#8A9A86", "#647260", "#111827"],
-      ["🧱 Terracotta", "#E2725B", "#ad4d3a", "#111827"],
-      ["🟤 Warm Ochre", "#CC7722", "#965518", "#ffffff"],
-      ["🫒 Olive Drab", "#6B8E23", "#4f6a19", "#ffffff"],
-      ["🤎 Taupe Brown", "#483C32", "#302820", "#ffffff"]
-
-    ],
-
-    "⚡ Bright & Neon": [
-
-      ["💜 Cyber Purple", "#9D00FF", "#6800a8", "#ffffff"],
-      ["🟢 Neon Green", "#39FF14", "#19b800", "#111827"],
-      ["💗 Hot Pink", "#FF1493", "#b00065", "#ffffff"],
-      ["🩵 Vibrant Cyan", "#00FFFF", "#00a8a8", "#111827"],
-      ["💖 Bright Magenta", "#FF00FF", "#b000b0", "#ffffff"]
-
-    ],
-
-    "🌸 Soft & Pastel": [
-
-      ["💜 Lavender Mist", "#E6E6FA", "#b5b5d8", "#111827"],
-      ["🍑 Peach Puff", "#FFDAB9", "#e8b98f", "#111827"],
-      ["🌹 Soft Rose", "#FFC0CB", "#e58a9b", "#111827"],
-      ["🩵 Baby Blue", "#89CFF0", "#5b9fc2", "#111827"],
-      ["🍵 Matcha Cream", "#D0F0C0", "#9bc58c", "#111827"]
-
-    ]
-
-  };
+  document.getElementById(page).classList.add("active");
+}
 
 
-  const themes = [];
+const themeGroups = {
+
+  "🎨 Original Themes":[
+
+    ["🌑 Black Hole","#000000","#080808","#ffffff"],
+    ["🌊 Ocean","#102a43","#174a7e","#ffffff"],
+    ["🟢 Matrix","#092e1b","#14532d","#ffffff"],
+    ["🟣 Purple Void","#24103d","#4c1d95","#ffffff"],
+    ["🔥 Lava","#3b0a0a","#7f1d1d","#ffffff"],
+    ["🌌 Galaxy","#10152e","#312e81","#ffffff"],
+    ["🌈 Rainbow","#351047","#86198f","#ffffff"],
+    ["❄️ Ice","#dbeafe","#60a5fa","#111827"],
+    ["🌅 Sunset","#4a1608","#c2410c","#ffffff"],
+    ["🌲 Forest","#052e16","#166534","#ffffff"],
+    ["⚡ Electric","#172554","#2563eb","#ffffff"],
+    ["🌙 Midnight","#09090b","#27272a","#ffffff"],
+    ["☀️ Daylight","#f3f4f6","#d1d5db","#111827"],
+    ["🍭 Candy","#4a044e","#db2777","#ffffff"]
+
+  ],
+
+  "🔥 Warm & Energetic":[
+
+    ["❤️ Crimson Red","#DC143C","#a30f2d","#ffffff"],
+    ["🪸 Coral Pink","#FF7F50","#e85d32","#111827"],
+    ["🟠 Electric Orange","#FF6F00","#c65300","#111827"],
+    ["🟡 Sunset Gold","#FFD700","#d4af00","#111827"],
+    ["🟨 Mustard Yellow","#E5A93C","#b8862f","#111827"]
+
+  ],
+
+  "❄️ Cool & Calm":[
+
+    ["☁️ Sky Blue","#87CEEB","#4682b4","#111827"],
+    ["💜 Electric Indigo","#4B0082","#31005c","#ffffff"],
+    ["🩵 Teal Green","#008080","#005f5f","#ffffff"],
+    ["🌿 Mint Fresh","#98FF98","#5dcc5d","#111827"],
+    ["🌃 Midnight Navy","#000080","#000052","#ffffff"]
+
+  ],
+
+  "🌿 Earthy & Muted":[
+
+    ["🌱 Sage Green","#8A9A86","#647260","#111827"],
+    ["🧱 Terracotta","#E2725B","#ad4d3a","#111827"],
+    ["🟤 Warm Ochre","#CC7722","#965518","#ffffff"],
+    ["🫒 Olive Drab","#6B8E23","#4f6a19","#ffffff"],
+    ["🤎 Taupe Brown","#483C32","#302820","#ffffff"]
+
+  ],
+
+  "⚡ Bright & Neon":[
+
+    ["💜 Cyber Purple","#9D00FF","#6800a8","#ffffff"],
+    ["🟢 Neon Green","#39FF14","#19b800","#111827"],
+    ["💗 Hot Pink","#FF1493","#b00065","#ffffff"],
+    ["🩵 Vibrant Cyan","#00FFFF","#00a8a8","#111827"],
+    ["💖 Bright Magenta","#FF00FF","#b000b0","#ffffff"]
+
+  ],
+
+  "🌸 Soft & Pastel":[
+
+    ["💜 Lavender Mist","#E6E6FA","#b5b5d8","#111827"],
+    ["🍑 Peach Puff","#FFDAB9","#e8b98f","#111827"],
+    ["🌹 Soft Rose","#FFC0CB","#e58a9b","#111827"],
+    ["🩵 Baby Blue","#89CFF0","#5b9fc2","#111827"],
+    ["🍵 Matcha Cream","#D0F0C0","#9bc58c","#111827"]
+
+  ]
+
+};
 
 
-  function createThemeButtons() {
-
-    const container =
-      document.getElementById("themeContainer");
-
-    container.innerHTML = "";
-
-    Object.keys(themeGroups).forEach(function(groupName) {
-
-      const section =
-        document.createElement("div");
-
-      section.className = "theme-section";
-
-      const title =
-        document.createElement("h3");
-
-      title.textContent = groupName;
-
-      section.appendChild(title);
+const themes = [];
 
 
-      themeGroups[groupName].forEach(function(theme) {
+function createThemeButtons(){
 
-        const name = theme[0];
-        const background = theme[1];
-        const header = theme[2];
-        const text = theme[3];
+  const container =
+    document.getElementById("themeContainer");
 
-        themes.push({
-          name: name,
-          background: background,
-          header: header,
-          text: text
-        });
+  Object.keys(themeGroups).forEach(function(group){
+
+    const section =
+      document.createElement("div");
+
+    section.className="theme-section";
 
 
-        const button =
-          document.createElement("button");
+    const title =
+      document.createElement("h3");
 
-        button.className = "theme-button";
-        button.textContent = name;
+    title.textContent=group;
 
-        button.onclick = function() {
+    section.appendChild(title);
 
-          setTheme(
-            background,
-            header,
-            text,
-            name
-          );
 
-        };
+    themeGroups[group].forEach(function(t){
 
-        section.appendChild(button);
+      const name=t[0];
+      const background=t[1];
+      const header=t[2];
+      const text=t[3];
 
+
+      themes.push({
+        name:name,
+        background:background,
+        header:header,
+        text:text
       });
 
 
-      container.appendChild(section);
+      const button =
+        document.createElement("button");
+
+      button.className="theme-button";
+
+      button.textContent=name;
+
+
+      button.onclick=function(){
+
+        setTheme(
+          background,
+          header,
+          text,
+          name
+        );
+
+      };
+
+
+      section.appendChild(button);
 
     });
 
-  }
+
+    container.appendChild(section);
+
+  });
+
+}
 
 
-  function setTheme(
-    background,
-    header,
-    text,
-    name
-  ) {
+function setTheme(
+  background,
+  header,
+  text,
+  name
+){
 
-    document.documentElement.style.setProperty(
-      "--background",
-      background
-    );
+  document.documentElement.style.setProperty(
+    "--background",
+    background
+  );
 
-    document.documentElement.style.setProperty(
-      "--header",
-      header
-    );
+  document.documentElement.style.setProperty(
+    "--header",
+    header
+  );
 
-    document.documentElement.style.setProperty(
-      "--card",
-      header
-    );
+  document.documentElement.style.setProperty(
+    "--card",
+    header
+  );
 
-    document.documentElement.style.setProperty(
-      "--text",
-      text
-    );
-
-
-    document.getElementById("dailyStatus").textContent =
-      "🎨 Current theme: " + name;
-
-  }
+  document.documentElement.style.setProperty(
+    "--text",
+    text
+  );
 
 
-  function randomTheme() {
+  document.getElementById("dailyStatus").textContent =
+    "🎨 Current theme: "+name;
 
-    const random =
-      themes[Math.floor(Math.random() * themes.length)];
+  document.getElementById("homeStatus").textContent =
+    "🎨 Current theme: "+name;
 
-    setTheme(
-      random.background,
-      random.header,
-      random.text,
-      random.name
-    );
-
-  }
+}
 
 
-  function resetTheme() {
+function randomTheme(){
 
-    setTheme(
-      "#111827",
-      "#1f2937",
-      "#ffffff",
-      "Default"
-    );
+  const theme =
+    themes[Math.floor(Math.random()*themes.length)];
 
-  }
+  setTheme(
+    theme.background,
+    theme.header,
+    theme.text,
+    theme.name
+  );
 
-
-  function dailyTheme() {
-
-    const day =
-      new Date().getDay();
-
-    const dailyThemes = [
-
-      themes[11],
-      themes[0],
-      themes[1],
-      themes[2],
-      themes[3],
-      themes[4],
-      themes[5]
-
-    ];
-
-    const today =
-      dailyThemes[day];
-
-    setTheme(
-      today.background,
-      today.header,
-      today.text,
-      today.name
-    );
-
-  }
+}
 
 
-  createThemeButtons();
+function resetTheme(){
 
-  dailyTheme();
+  setTheme(
+    "#111827",
+    "#1f2937",
+    "#ffffff",
+    "Default"
+  );
+
+}
+
+
+function dailyTheme(){
+
+  const day =
+    new Date().getDay();
+
+
+  const dailyThemes=[
+
+    themes[11],
+    themes[0],
+    themes[1],
+    themes[2],
+    themes[3],
+    themes[4],
+    themes[5]
+
+  ];
+
+
+  const today =
+    dailyThemes[day];
+
+
+  setTheme(
+    today.background,
+    today.header,
+    today.text,
+    today.name
+  );
+
+}
+
+
+createThemeButtons();
+
+dailyTheme();
 
 </script>
 
