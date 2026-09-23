@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>My Game Hub</title>
 
   <style>
@@ -18,6 +19,7 @@
     header {
       padding: 30px;
       background: #1f2937;
+      transition: 0.3s;
     }
 
     h1 {
@@ -36,6 +38,7 @@
       border-radius: 12px;
       font-size: 16px;
       cursor: pointer;
+      transition: 0.2s;
     }
 
     button:hover {
@@ -64,6 +67,10 @@
     .back {
       background: #374151;
       color: white;
+    }
+
+    .theme-button {
+      min-width: 150px;
     }
   </style>
 </head>
@@ -94,40 +101,132 @@
 
   <div class="card">
     <h3>Game 1</h3>
-    <button onclick="alert('Add your game link here!')">▶ Play</button>
+    <button onclick="alert('Add your game link here!')">
+      ▶ Play
+    </button>
   </div>
 
   <div class="card">
     <h3>Game 2</h3>
-    <button onclick="alert('Add your game link here!')">▶ Play</button>
+    <button onclick="alert('Add your game link here!')">
+      ▶ Play
+    </button>
   </div>
 
   <br>
-  <button class="back" onclick="showPage('home')">← Back</button>
+
+  <button class="back" onclick="showPage('home')">
+    ← Back
+  </button>
 </div>
 
 <!-- MEDIA -->
 <div id="media" class="page">
   <h2>🎬 Media</h2>
   <p>Add your media links here.</p>
-  <button class="back" onclick="showPage('home')">← Back</button>
+
+  <button class="back" onclick="showPage('home')">
+    ← Back
+  </button>
 </div>
 
 <!-- SETTINGS -->
 <div id="settings" class="page">
-  <h2>⚙️ Settings</h2>
 
-  <button onclick="blackHole()">🌑 Black Hole</button>
-  <button onclick="blueTheme()">🔵 Blue</button>
-  <button onclick="greenTheme()">🟢 Green</button>
-  <button onclick="resetTheme()">🔄 Reset</button>
+  <h2>⚙️ Themes</h2>
+
+  <button class="theme-button"
+    onclick="setTheme('#000000','#080808')">
+    🌑 Black Hole
+  </button>
+
+  <button class="theme-button"
+    onclick="setTheme('#102a43','#174a7e')">
+    🌊 Ocean
+  </button>
+
+  <button class="theme-button"
+    onclick="setTheme('#092e1b','#14532d')">
+    🟢 Matrix
+  </button>
+
+  <button class="theme-button"
+    onclick="setTheme('#24103d','#4c1d95')">
+    🟣 Purple Void
+  </button>
+
+  <button class="theme-button"
+    onclick="setTheme('#3b0a0a','#7f1d1d')">
+    🔥 Lava
+  </button>
+
+  <button class="theme-button"
+    onclick="setTheme('#10152e','#312e81')">
+    🌌 Galaxy
+  </button>
+
+  <button class="theme-button"
+    onclick="setTheme('#351047','#86198f')">
+    🌈 Rainbow
+  </button>
+
+  <button class="theme-button"
+    onclick="setTheme('#dbeafe','#60a5fa')">
+    ❄️ Ice
+  </button>
+
+  <button class="theme-button"
+    onclick="setTheme('#4a1608','#c2410c')">
+    🌅 Sunset
+  </button>
+
+  <button class="theme-button"
+    onclick="setTheme('#052e16','#166534')">
+    🌲 Forest
+  </button>
+
+  <button class="theme-button"
+    onclick="setTheme('#172554','#2563eb')">
+    ⚡ Electric
+  </button>
+
+  <button class="theme-button"
+    onclick="setTheme('#09090b','#27272a')">
+    🌙 Midnight
+  </button>
+
+  <button class="theme-button"
+    onclick="setTheme('#f3f4f6','#d1d5db')">
+    ☀️ Daylight
+  </button>
+
+  <button class="theme-button"
+    onclick="setTheme('#4a044e','#db2777')">
+    🍭 Candy
+  </button>
 
   <br><br>
-  <button class="back" onclick="showPage('home')">← Back</button>
+
+  <button onclick="randomTheme()">
+    🎲 Random Theme
+  </button>
+
+  <button onclick="resetTheme()">
+    🔄 Reset
+  </button>
+
+  <br><br>
+
+  <button class="back" onclick="showPage('home')">
+    ← Back
+  </button>
+
 </div>
 
 <script>
+
   function showPage(page) {
+
     document.querySelectorAll(".page").forEach(function(p) {
       p.classList.remove("active");
     });
@@ -135,25 +234,49 @@
     document.getElementById(page).classList.add("active");
   }
 
-  function blackHole() {
-    document.body.style.background = "#000000";
-    document.querySelector("header").style.background = "#080808";
+
+  function setTheme(background, header) {
+
+    document.body.style.background = background;
+
+    document.querySelector("header").style.background = header;
   }
 
-  function blueTheme() {
-    document.body.style.background = "#102a43";
-    document.querySelector("header").style.background = "#174a7e";
+
+  function randomTheme() {
+
+    const themes = [
+
+      ["#000000","#080808"],
+      ["#102a43","#174a7e"],
+      ["#092e1b","#14532d"],
+      ["#24103d","#4c1d95"],
+      ["#3b0a0a","#7f1d1d"],
+      ["#10152e","#312e81"],
+      ["#351047","#86198f"],
+      ["#dbeafe","#60a5fa"],
+      ["#4a1608","#c2410c"],
+      ["#052e16","#166534"],
+      ["#172554","#2563eb"],
+      ["#09090b","#27272a"],
+      ["#f3f4f6","#d1d5db"],
+      ["#4a044e","#db2777"]
+
+    ];
+
+    const random =
+      themes[Math.floor(Math.random() * themes.length)];
+
+    setTheme(random[0], random[1]);
   }
 
-  function greenTheme() {
-    document.body.style.background = "#092e1b";
-    document.querySelector("header").style.background = "#14532d";
-  }
 
   function resetTheme() {
-    document.body.style.background = "#111827";
-    document.querySelector("header").style.background = "#1f2937";
+
+    setTheme("#111827","#1f2937");
+
   }
+
 </script>
 
 </body>
